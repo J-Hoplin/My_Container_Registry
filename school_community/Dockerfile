@@ -19,7 +19,7 @@ WORKDIR /apps
 RUN ["/bin/bash","-c","git clone https://github.com/J-hoplin1/Weather_Hook.git"]
 # Weather hook config
 # Install discord hook dependecies
-RUN ["/bin/bash","-c","cd Weather_Hook && npm run install-discord"]
+RUN ["/bin/bash","-c","cd Weather_Hook && npm run build-env"]
 
 # For later
 EXPOSE 443 80
