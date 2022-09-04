@@ -1,0 +1,16 @@
+version: "3.1"
+
+services:
+  code-server:
+    container_name: code-server
+    image: codercom/code-server
+    ports:
+      - "8888:8080"
+    volumes:
+      - "./.config:/home/coder/.config"
+      - "./.local:/home/coder/.local"
+      - "../:/home/coder/project"
+    environment:
+      - DOCKER_USER=${USER}
+      - PASSWORD=${PASSWORD}
+    user: "${UID}:${GID}"
