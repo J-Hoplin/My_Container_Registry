@@ -9,6 +9,9 @@ RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get install vim -y
 
+# Set timezone to KST
+RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
 # Make app directory
 # -p : Make parent direct ory if needed
 RUN mkdir -p /apps
