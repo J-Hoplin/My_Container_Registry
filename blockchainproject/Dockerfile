@@ -1,5 +1,8 @@
 FROM ubuntu
 
+LABEL maintainer="hoplin"
+LABEL email="jhoplin7259@gmail.com"
+
 # Ubuntu default packages update upgrade
 RUN apt-get update -y
 RUN apt-get upgrade -y
@@ -12,13 +15,20 @@ RUN apt-get install sudo -y
 RUN apt-get install npm -y
 # install hostname
 RUN apt-get install hostname -y
+# 
+
+# Make Local Volume mount directory
+RUN mkdir project
+
+# npm init
+RUN ["/bin/bash", "-c","cd project"]
+
+# Export default volume
+VOLUME ["/home/project"]
+
 
 # Set baisc directory
 WORKDIR /home
-
-# Export default volume
-VOLUME ["/home"]
-
 # Expose port
 # - Nginx
 # - Apache Tomcat
