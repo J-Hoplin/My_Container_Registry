@@ -7,7 +7,7 @@
 ```
 docker build -t (image_name) .
 
-docker run -it -d --name (container_name) (image_name) bash 
+docker run -it -d -v (local directory to mount):/apps --name (container_name) (image_name) bash 
 
 docker exec -it (container_name) bash
 ```
