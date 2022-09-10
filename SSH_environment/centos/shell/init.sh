@@ -9,11 +9,11 @@ systemctl enable firewalld
 yum install -y openssh-server
 
 # Add Port 22 to sshd_config file
-RUN echo "Port 22" >> /etc/ssh/sshd_config
+echo "Port 22" >> /etc/ssh/sshd_config
 
 # Allow ssh port from firewall and reload firewall
 firewall-cmd --permanent --zone=public --add-port=22/tcp
 firewall-cmd --reload
 
 # Restart SSH
-RUN systemctl restart sshd
+systemctl restart sshd
