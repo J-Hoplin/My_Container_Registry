@@ -16,6 +16,12 @@ RUN yum install epel-release -y
 # Install firewall and enable firewall
 RUN yum install firewalld -y
 
+# Install Centos InitScript
+RUN yum install initscripts -y
+
+# Install Systemd for privileged container
+RUN yum install systemd -y
+
 # Change root password - default password : centos123
 RUN echo 'root:centos123' | chpasswd
 
