@@ -29,14 +29,15 @@ RUN mkdir minecraft
 # Decide working directory
 WORKDIR /minecraft
 
-# Add Auth of directory 
-RUN chmod -R 777 $(pwd)
+# Add permission of directory. Make permission for future generated files, directories also
+RUN setfacl -Rdm u:root:rwx $(pwd)
 
 COPY entrypoint.sh /usr/bin/docker-entrypoint.sh
 
 # Enroll alias
 RUN echo "alias initServer=\"bash /usr/bin/docker-entrypoint.sh\"" >> $HOME/.bashrc
 RUN echo "alias startServer=\"java -Xmx${maxmem}M -ms${minmem}M -jar server.jar nogui\"" >> $HOME/.bashrc
+RUN echo "alias clearWorldDir=\"rm -rf $(pwd)/world/*\"" >> $HOME/.bashrc
 RUN source $HOME/.bashrc
 
 VOLUME [ "/minecraft" ]

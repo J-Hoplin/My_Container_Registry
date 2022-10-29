@@ -57,8 +57,10 @@ docker run -it --name (container name)
 -p (local port):25565 
 -p (local port):25575 (image name) bash
 ```
-### Attach to container
+### Attach to container and minecraft bucket
 
 ```bash
+
+# To connect to server bucket alway use this
 docker attach (container name)
 ```
