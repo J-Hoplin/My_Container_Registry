@@ -35,6 +35,14 @@ cd "version (version)"
 
 docker build -t (image name) .
 ```
+### Image Explanation
+
+- Starting with `version~` is map uncustomizable dockerfile. It only available to play plane wild server. And also unable to custom config. It's better to use `editable_version` starting docker files for playing other customed map
+
+- Starting with `editable_version` is map customizeable dockerfile. It has some commands for server
+    - initServer : Open basic server. This command require at least once before play minecraft
+    - Start server : Start server
+    - clearWorldDir : This command is for clearing `world` directory if you want to change some world file for other map
 
 ### Run Container
 

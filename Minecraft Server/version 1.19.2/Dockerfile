@@ -29,6 +29,9 @@ RUN mkdir minecraft
 # Decide working directory
 WORKDIR /minecraft
 
+# Add Auth of directory 
+RUN chmod -R 777 $(pwd)
+
 COPY entrypoint.sh /usr/bin/docker-entrypoint.sh
 
 ENTRYPOINT ["sh", "/usr/bin/docker-entrypoint.sh" ]

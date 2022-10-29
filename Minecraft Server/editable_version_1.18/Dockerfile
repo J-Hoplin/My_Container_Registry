@@ -34,7 +34,10 @@ RUN chmod -R 777 $(pwd)
 
 COPY entrypoint.sh /usr/bin/docker-entrypoint.sh
 
-ENTRYPOINT ["sh", "/usr/bin/docker-entrypoint.sh" ]
+# Enroll alias
+RUN echo "alias initServer=\"bash /usr/bin/docker-entrypoint.sh\"" >> $HOME/.bashrc
+RUN echo "alias startServer=\"java -Xmx${maxmem}M -ms${minmem}M -jar server.jar nogui\"" >> $HOME/.bashrc
+RUN source $HOME/.bashrc
 
 VOLUME [ "/minecraft" ]
 EXPOSE 25565 25575
