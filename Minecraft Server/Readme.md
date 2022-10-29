@@ -38,7 +38,7 @@ docker build -t (image name) .
 
 ### Run Container
 
-```
+```bash
 # If you want to run container as daemon use option -itd instead of -it
 # It require at least 3min for server to be open
 docker run -it --name (container name)
