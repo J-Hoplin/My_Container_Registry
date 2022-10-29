@@ -40,7 +40,7 @@
 
 ```bash
 # move to version file
-cd "version (version)"
+cd "(version)"
 
 docker build -t (image name) .
 ```
