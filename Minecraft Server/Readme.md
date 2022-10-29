@@ -27,14 +27,6 @@
     - 1.19.2
 
 ***
-### Build Image
-
-```bash
-# move to version file
-cd "version (version)"
-
-docker build -t (image name) .
-```
 ### Image Explanation
 
 - Starting with `version~` is map uncustomizable dockerfile. It only available to play plane wild server. And also unable to custom config. It's better to use `editable_version` starting docker files for playing other customed map
@@ -43,6 +35,15 @@ docker build -t (image name) .
     - initServer : Open basic server. This command require at least once before play minecraft
     - Start server : Start server
     - clearWorldDir : This command is for clearing `world` directory if you want to change some world file for other map
+***
+### Build Image
+
+```bash
+# move to version file
+cd "version (version)"
+
+docker build -t (image name) .
+```
 
 ### Run Container
 
