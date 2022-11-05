@@ -34,3 +34,4 @@ firewall-cmd --reload
 printConsole "Reload SSH"
 # Restart SSH
 systemctl restart sshd
+rm /usr/bin/entrypoint.sh
