@@ -12,6 +12,8 @@ systemctl start firewalld
 systemctl enable firewalld
 
 printConsole "Install & Configuring SSH"
+# Install sudo
+yum install -y sudo
 # Install sshd
 yum install -y openssh-server
 # Install vim
