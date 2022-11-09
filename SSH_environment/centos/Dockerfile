@@ -40,7 +40,7 @@ RUN yum install systemd -y
 RUN echo 'root:centos123' | chpasswd
 
 # Set default working directory to "/home"
-WORKDIR /home
+WORKDIR /root
 
 # Copy init.sh : hidden file
 # Copy entrypoint.sh to /usr/bin to execute interatively
@@ -49,6 +49,6 @@ COPY /shell /usr/bin
 RUN chmod +x /usr/bin/entrypoint.sh
 
 # Export VOLUME
-VOLUME ["/home"]
+VOLUME ["/root"]
 # Expose ssh
 EXPOSE 22

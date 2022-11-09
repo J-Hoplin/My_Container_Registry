@@ -19,7 +19,7 @@ option_dockerrun = list()
 # Option --name
 option_dockerrun.append(f"--name {args['n']}") if args['n'] else False
 # Option -v
-option_dockerrun.append(f"-v {args['v']}:/home") if args['v'] else False
+option_dockerrun.append(f"-v {args['v']}:/root") if args['v'] else False
 # Option -p
 option_dockerrun.append(f"-p {args['p']}:22") if args['p'] else False
 # Restart option
