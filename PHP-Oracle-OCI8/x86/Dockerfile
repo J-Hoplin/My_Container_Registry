@@ -23,6 +23,7 @@ RUN service apache2 restart
 # Install SSH
 RUN apt-get install openssh-server -y
 
+# Setting Oracle Client and OCI8
 RUN mkdir -p /usr/lib/oracle/client\
 && cd /usr/lib/oracle/client\
 && wget https://download.oracle.com/otn_software/linux/instantclient/191000/instantclient-basic-linux.x64-19.10.0.0.0dbru.zip\
@@ -51,6 +52,13 @@ RUN mkdir -p /usr/lib/oracle/client\
 # ln[38] : Enroll oci8 to php.ini
 # ln[39] : Add to mods-available
 # ln[40] : Make symbolic link about oci.ini
+
+# Set default root password
+RUN echo "root:ubuntu123" | chpasswd
+
+# Setting SSH Configuration
+RUN echo "Port 22" >> /etc/ssh/sshd_config\
+&& echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 
 # Install composer & laravel
 RUN cd ~\

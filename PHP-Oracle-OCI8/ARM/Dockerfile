@@ -53,6 +53,13 @@ RUN mkdir -p /usr/lib/oracle/client\
 # ln[39] : Add to mods-available
 # ln[40] : Make symbolic link about oci.ini
 
+# Set default root password
+RUN echo "root:ubuntu123" | chpasswd
+
+# Setting SSH Configuration
+RUN echo "Port 22" >> /etc/ssh/sshd_config\
+&& echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+
 # Install composer & laravel
 RUN cd ~\
 && curl -sS https://getcomposer.org/installer | php\

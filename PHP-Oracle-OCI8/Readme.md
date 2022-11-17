@@ -7,9 +7,20 @@ Docker : PHP - OCI 8
     - PHP 8.0
     - PHP Basic Extensions
     - OCI8
-    - Oracle Instant Client(Basic, SDK)
+    - Oracle Instant Client(Basic, SDK, ver. 19)
     - PHP Composer
     - Laravel
+- Volume
+    - /var/www/html
+- Port
+    - 22 : SSH 
+    - 80 : PHP / Apache 2
+- Default ssh passwd
+    - Username : root
+    - Password : ubuntu123
+    ```bash
+    ssh root@(IP or hostname) -p (SSH Port)
+    ```
 ***
 ## Warning
 - **Please consider your Docker host's CPU**
