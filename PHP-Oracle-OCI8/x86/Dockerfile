@@ -17,7 +17,7 @@ RUN apt-get install php8.0 -y
 # Install apache-php
 RUN apt-get install libapache2-mod-php -y
 # Install essential utils
-RUN apt-get install git gcc libaio1 wget unzip php-dev php-pear build-essential vim -y
+RUN apt-get install git gcc libaio1 wget unzip php-dev php-pear build-essential curl vim -y
 # Restart apache2
 RUN service apache2 restart
 # Install SSH
