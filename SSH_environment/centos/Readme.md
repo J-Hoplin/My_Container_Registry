@@ -5,7 +5,7 @@ SSH Environment : Cent OS Base
 ## Image information
 - Base : Cent OS:latest
 - Volume
-    - /home
+    - /root
 - Port
     - 22 : For ssh
 - Privileged : True (Require system D-Bus)
