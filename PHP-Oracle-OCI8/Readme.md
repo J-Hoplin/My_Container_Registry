@@ -15,7 +15,7 @@ Docker : PHP - OCI 8
 - Port
     - 22 : SSH 
     - 80 : PHP / Apache 2
-- Default ssh passwd
+- Default ssh passwd : You need to change password after first access
     - Username : root
     - Password : ubuntu123
     ```bash
