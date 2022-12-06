@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:rolling
 
 LABEL maintainer="hoplin"
 LABEL email="jhoplin7259@gmail.com"
@@ -54,7 +54,9 @@ RUN mkdir -p /usr/lib/oracle/client\
 # ln[40] : Make symbolic link about oci.ini
 
 # Set default root password
-RUN echo "root:ubuntu123" | chpasswd
+# Make user to change password after first access
+RUN echo "root:ubuntu123" | chpasswd\
+&& chage -d 0 root
 
 # Setting SSH Configuration
 RUN echo "Port 22" >> /etc/ssh/sshd_config\
